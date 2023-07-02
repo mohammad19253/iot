@@ -1,0 +1,15 @@
+.primary_button {
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding:8px 14px ;
+   
+    background-color: #444AFF;
+    &:hover{
+        background-color: #252dfa;
+    }
+    &:disabled{
+        background-color: #c2c4ff;
+    }
+}
+

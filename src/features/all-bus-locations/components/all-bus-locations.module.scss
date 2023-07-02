@@ -1,0 +1,21 @@
+.map_container {
+  height: 100vh;
+  z-index: 0;
+}
+
+.action_bar_container {
+  font-size: 12px;
+  min-height: 100vh;
+  padding: 24px 28px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  .details_box {
+    border: 1px solid rgb(212, 212, 212);
+    padding: 12px;
+    border-radius: 5px;
+  }
+}

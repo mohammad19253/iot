@@ -1,0 +1,12 @@
+@keyframes fade { 
+    from { 
+        width: 35px;
+        height: 50px;
+        margin: -80px -15px;     
+    } 
+    
+  }
+  
+  .blinking {
+    animation: fade 0.8s infinite alternate;
+  }
