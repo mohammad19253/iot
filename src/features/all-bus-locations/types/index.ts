@@ -40,3 +40,29 @@ export interface buses {
   activeInLine: boolean;
   inbound: boolean;
 }
+export interface status {
+  connected?: boolean;
+  disconnected?: boolean;
+  suspended?: boolean;
+  repair?: boolean;
+  inbound?: boolean;
+  outbound?: boolean;
+  unknown?: boolean;
+}
+export type active = {
+  inline?: boolean;
+  outline?: boolean;
+  inbound?: boolean;
+  outbound?: boolean;
+  unknown?: boolean;
+};
+
+export interface busy {
+  active?: boolean;
+  deactive?: boolean;
+  inbound?: boolean;
+  outbound?: boolean;
+  unknown?: boolean;
+}
+
+export type filterState = "busy" | "status" | "active";

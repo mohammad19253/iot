@@ -2,7 +2,7 @@ import L from "leaflet";
 
 import "./iconStyle.scss";
 
-export const MarkerIcon = (
+export const BusMarkerIcon = (
   direction: string,
   isConnected: boolean,
   isBlink: boolean
@@ -32,4 +32,17 @@ export const MarkerIcon = (
       className: isBlink ? "blinking" : "",
     });
   }
+};
+
+export const TaxiMarkerIcon = (
+  isConnected: boolean,
+  isBlink: boolean
+) => {
+  const markerStatus = isConnected ? "active" : "deactive";
+  return L.icon({
+    iconUrl: require(`../../assests/taxi-${markerStatus}.svg`),
+    iconSize: [20, 32],
+    iconAnchor: [10, 35],
+    className: isBlink ? "blinking" : "",
+  });
 };

@@ -6,8 +6,10 @@ import {
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 import all_bus_locations_slice from "../features/all-bus-locations/slice/all-bus-location-slice";
+import all_taxi_locations_slice from "../features/all-taxi-location/slice/all-taxi-location-slice";
 const rootReducer = combineReducers({
   all_bus_locations: all_bus_locations_slice,
+  all_taxi_locations: all_taxi_locations_slice,
 });
 
 export function setupStore(preloadedState?: PreloadedState<RootState>) {

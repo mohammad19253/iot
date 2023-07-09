@@ -12,6 +12,7 @@ interface ToggleInputProps {
   registration?: Partial<UseFormRegisterReturn>;
   className?: string;
   icon?: React.ReactNode;
+  type?: string;
 }
 
 export const ToggleButton: React.FC<ToggleInputProps> = ({
@@ -21,11 +22,13 @@ export const ToggleButton: React.FC<ToggleInputProps> = ({
   registration,
   className = "",
   icon,
+  type = "primary",
 }) => {
   const classes = classnames(styles.custom_toggle, {
     [className]: className,
-    [styles.disabled_checked]: disabled === "disabled_checked",
-    [styles.disabled_not_checked]: disabled === "disabled_not_checked",
+    [styles.danger]: type === "danger",
+    [styles.success]: type === "success",
+    [styles.dark]: type === "dark",
   });
   return (
     <label className={styles.base}>
