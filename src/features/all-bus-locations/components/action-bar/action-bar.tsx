@@ -1,14 +1,14 @@
 import Select from "react-select";
 import Tabs from "react-bootstrap/Tabs";
 
-import { useAppDispatch, useAppSelector } from "../../../store/store";
-import { buses } from "../types";
+import { useAppDispatch, useAppSelector } from "../../../../store/store";
+import { buses } from "../../types";
 
-import styles from "./all-bus-locations.module.scss";
-import { setFilterState } from "../slice/all-bus-location-slice";
-import { ActiveTab } from "./map/actionbar/tabs/active";
-import { StatusTab } from "./map/actionbar/tabs/status";
-import { BusyTab } from "./map/actionbar/tabs/busy";
+import styles from "../all-bus-locations.module.scss";
+import { setFilterState } from "../../slice/all-bus-location-slice";
+import { ActiveTab } from "./active";
+import { StatusTab } from "./status";
+import { BusyTab } from "./busy";
 import { Tab } from "react-bootstrap";
 import moment from "jalali-moment";
 

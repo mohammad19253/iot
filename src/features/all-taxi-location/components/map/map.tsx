@@ -10,6 +10,7 @@ import {
 } from "react-leaflet";
 import { useAppDispatch, useAppSelector } from "../../../../store/store";
 import { TaxiMarkerIcon } from "../../../../utils/icons/icons";
+import { MAP_CENTER, MAP_TILE } from "../../../../config/global";
 import { setSelectedTaxi } from "../../slice/all-taxi-location-slice";
 import { taxi } from "../../types";
 
@@ -47,14 +48,14 @@ export const Map = () => {
 
   return (
     <MapContainer
-      center={[32.65709667, 51.72394833]}
+      center={[MAP_CENTER.lat, MAP_CENTER.lng]}
       zoom={13}
       className={styles.map_container}
       ref={mapRef}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url={MAP_TILE}
       />
       <FeatureGroup ref={mapGroupRef}>
         {statusMarkers()?.map((taxi, index) => {

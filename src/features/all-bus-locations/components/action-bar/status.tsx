@@ -1,4 +1,3 @@
-
 import { WifiOff } from "react-bootstrap-icons";
 import { Wifi } from "react-bootstrap-icons";
 import { Broadcast } from "react-bootstrap-icons";
@@ -8,11 +7,11 @@ import { ArrowDown } from "react-bootstrap-icons";
 import { ArrowUp } from "react-bootstrap-icons";
 
 import { Exclamation } from "react-bootstrap-icons";
-import { ToggleButton } from "../../../../../../utils/toggle-button/toggle-button";
-import { useAppDispatch, useAppSelector } from "../../../../../../store/store";
+import { ToggleButton } from "../../../../utils/toggle-button/toggle-button";
+import { useAppSelector, useAppDispatch } from "../../../../store/store";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-import { setStatus } from "../../../../slice/all-bus-location-slice";
+import { setStatus } from "../../slice/all-bus-location-slice";
 
 export const StatusTab = () => {
   const dispatch = useAppDispatch();
@@ -78,8 +77,6 @@ export const StatusTab = () => {
           .filter((bus) => bus.direction === "I")
           .length.toString()}
         registration={register("inbound")}
-
-      
       />
       <ToggleButton
         icon={<ArrowDown color="white" size={18} />}

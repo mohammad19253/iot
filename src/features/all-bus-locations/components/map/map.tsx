@@ -1,5 +1,5 @@
 import L from "leaflet";
-import { useState } from "react";
+import { MAP_TILE } from "../../../../config/global";
 import { MapContainer, Marker, TileLayer, Tooltip } from "react-leaflet";
 import { useAppDispatch, useAppSelector } from "../../../../store/store";
 import { BusMarkerIcon } from "../../../../utils/icons/icons";
@@ -82,7 +82,7 @@ export const Map = () => {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url={MAP_TILE}
       />
       {markers(filterState)?.map((bus, index) => {
         if (bus.busOperatorCode === 124) console.log(bus);

@@ -5,10 +5,10 @@ import { ArrowsAngleExpand } from "react-bootstrap-icons";
 import { ArrowDown } from "react-bootstrap-icons";
 import { ArrowUp } from "react-bootstrap-icons";
 import { Exclamation } from "react-bootstrap-icons";
-import { ToggleButton } from "../../../../../../utils/toggle-button/toggle-button";
-import { useAppDispatch, useAppSelector } from "../../../../../../store/store";
+import { ToggleButton } from "../../../../utils/toggle-button/toggle-button";
+import { useAppSelector, useAppDispatch } from "../../../../store/store";
 import { useEffect } from "react";
-import { setActive } from "../../../../slice/all-bus-location-slice";
+import { setActive } from "../../slice/all-bus-location-slice";
 
 export const ActiveTab = () => {
   const dispatch = useAppDispatch();

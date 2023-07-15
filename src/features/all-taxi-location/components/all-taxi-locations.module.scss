@@ -37,27 +37,36 @@
     right: 0;
     transition: all 0.1s linear;
     .details_box {
-      border: 1px solid rgb(212, 212, 212);
+      background-color: white;
       padding: 12px;
       border-radius: 5px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     }
     .bus_details_box {
-      border: 1px solid rgb(212, 212, 212);
-      padding: 12px;
+      text-align: right;
       border-radius: 5px;
-      > div {
+      background-color: white;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      > .detials div {
         &:nth-child(even) {
-          background-color: rgb(179, 179, 179);
+          background-color: #ffeebd;
         }
-        border: 1px solid rgb(179, 179, 179);
-        margin: 15px 0;
-        padding: 10px 20px;
-        border-radius: 10px;
+        padding: 10px 15px;
         display: flex;
         justify-content: flex-end;
         width: 100%;
         gap: 20px;
-        text-align: right;
+      }
+      .taxi_code {
+        background-color: #ffe391;
+        padding: 20px 15px;
+        overflow: overlay;
+        border-radius: 5px 5px 0 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
       }
     }
   }

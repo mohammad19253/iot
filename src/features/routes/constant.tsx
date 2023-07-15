@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import { Spinner } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
+import { AllBusLocations } from "../all-bus-locations";
 import { TaxisLocations } from "../all-taxi-location";
 import ErrorPage from "../error/Error";
-import { Location } from "../location/location";
 
 const AuthRoutes = () => {
   return (
@@ -27,11 +27,6 @@ export const routes = [
       {
         path: "/all-taxis-locations",
         element: <TaxisLocations />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/location",
-        element: <Location />,
         errorElement: <ErrorPage />,
       },
     ],

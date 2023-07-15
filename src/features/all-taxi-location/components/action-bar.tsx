@@ -6,12 +6,16 @@ import { taxi } from "../types";
 import styles from "./all-taxi-locations.module.scss";
 import { StatusTab } from "./status";
 import moment from "jalali-moment";
-import { ArrowBarLeft, ArrowBarRight } from "react-bootstrap-icons";
+import {
+  ArrowBarLeft,
+  ArrowBarRight,
+  TaxiFrontFill,
+} from "react-bootstrap-icons";
 import classNames from "classnames";
 import { setSelectedTaxi } from "../slice/all-taxi-location-slice";
 
 export const ActionBar = () => {
-  const dispatch=useAppDispatch()
+  const dispatch = useAppDispatch();
   const [toggler, setToggler] = useState(false);
   const taxis = useAppSelector((state) => state.all_taxi_locations.taxis);
   const selectedTaxiCode = useAppSelector(
@@ -39,6 +43,7 @@ export const ActionBar = () => {
   return (
     <div className={className}>
       <Select
+        isClearable
         options={options}
         isLoading={options?.length === 0 ? true : false}
         classNamePrefix={"react-select"}
@@ -53,23 +58,36 @@ export const ActionBar = () => {
           <span>{taxis.length}</span>
           <span>تعداد همه تاکسی ها</span>
         </div>
-
-        <hr />
         <StatusTab />
       </div>
-      <hr />
+      <br />
       {selectedTaxi && (
         <>
           <div className={styles.bus_details_box}>
-            <div>سرعت لحظه ای : {selectedTaxi?.groundSpeed}</div>
-            <div>
-              {selectedTaxi?.isConnected === true ? "وصل" : "قطع"}: متصل/قطع
+            <div className={styles.taxi_code}>
+              <span>{selectedTaxi.taxiOperatorCode}&nbsp;:&nbsp;کد تاکسی</span>
+              <span className="d-flex justify-content-between gap-2">
+                <span>{selectedTaxi.taxiPlate}</span>
+                <TaxiFrontFill size={20} />
+              </span>
             </div>
-            <div>
-              {moment(selectedTaxi?.clientDate, "YYYYMMDDHHmmss").format(
-                "jYYYY/jM/jD HH:mm:ss"
-              )} 
-              : تاریخ 
+            <div className={styles.detials}>
+              <div>سرعت لحظه ای :&nbsp;&nbsp;{selectedTaxi?.groundSpeed}</div>
+              <div>
+                متصل/قطع:&nbsp;&nbsp;
+                {selectedTaxi?.isConnected === true ? "وصل" : "قطع"}
+              </div>
+              <div>
+                {moment(selectedTaxi?.clientDate, "YYYYMMDDHHmmss").format(
+                  "jYYYY/jM/jD HH:mm:ss"
+                )}
+                &nbsp; : تاریخ
+              </div>
+              <div>
+                {" "}
+                راننده :&nbsp;&nbsp;{selectedTaxi?.driverFirstName}&nbsp;
+                {selectedTaxi?.driverLastName}
+              </div>
             </div>
           </div>
         </>

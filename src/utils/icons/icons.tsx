@@ -42,7 +42,7 @@ export const TaxiMarkerIcon = (
   return L.icon({
     iconUrl: require(`../../assests/taxi-${markerStatus}.svg`),
     iconSize: [20, 32],
-    iconAnchor: [10, 35],
+    iconAnchor: [12, 36],
     className: isBlink ? "blinking" : "",
   });
 };

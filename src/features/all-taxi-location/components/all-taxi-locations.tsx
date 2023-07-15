@@ -4,11 +4,9 @@ import { ActionBar } from "./action-bar";
 import { Map } from "./map/map";
 
 import styles from "./all-taxi-locations.module.scss";
-import {
-  ALL_TAXI_LOCATIONS_WEBSOCKET,
-  AUTHORIZATION_TOKEN,
-  SOCKET_BASE_ADDRESS,
-} from "../api/constant";
+import { ALL_TAXI_LOCATIONS_WEBSOCKET } from "../api/constant";
+import { AUTHORIZATION_TOKEN } from "../../../config/global";
+import { SOCKET_BASE_ADDRESS } from "../../../config/global";
 export const TaxisLocations = () => {
   const dispatch = useDispatch();
   const websocket = new WebSocket(

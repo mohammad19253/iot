@@ -1,12 +1,12 @@
-import { ToggleButton } from "../../../../../../utils/toggle-button/toggle-button";
+import { ToggleButton } from "../../../../utils/toggle-button/toggle-button";
 import { Reception4 } from "react-bootstrap-icons";
 import { Reception1 } from "react-bootstrap-icons";
 import { ArrowDown } from "react-bootstrap-icons";
 import { ArrowUp } from "react-bootstrap-icons";
 import { Exclamation } from "react-bootstrap-icons";
-import { useAppDispatch, useAppSelector } from "../../../../../../store/store";
+import { useAppSelector, useAppDispatch } from "../../../../store/store";
 import { useForm } from "react-hook-form";
-import { setBusy } from "../../../../slice/all-bus-location-slice";
+import { setBusy } from "../../slice/all-bus-location-slice";
 import { useEffect } from "react";
 
 export const BusyTab = () => {
